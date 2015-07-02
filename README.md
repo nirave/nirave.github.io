@@ -1,3 +1,33 @@
+***************************
+Running this website.
+***************************
+This website can be run by placing the directory contents into the web server's document root
+
+***************************
+Changes made to improve speed and performance of index.html
+***************************
+
+1) Inline the contents of style.css to reduce the Critical Rendering Path
+
+2) Stored the web fonts locally to reduce the Critical Rendering Path and reduce load time
+
+3) Compressed pizzeria and profile pic
+
+***************************
+Changes made to main.js to improve pizza views size change and scrolling responsiveness 
+***************************
+
+1) Removed determineDX function to elimnate Forced Synchronous Layout
+
+2) Removed pixel calculations in changePizzaSizes and simplified resizing by using width percentage
+
+3) Ran document.body.scrollTop once and saved the results to eliminate Forced Synchronous Layout
+
+
+***************************
+Previous information
+***************************
+
 ## Website Performance Optimization portfolio project
 
 Your challenge, if you wish to accept it (and we sure hope you will), is to optimize this online portfolio for speed! In particular, optimize the critical rendering path and make this page render as quickly as possible by applying the techniques you've picked up in the [Critical Rendering Path course](https://www.udacity.com/course/ud884).
