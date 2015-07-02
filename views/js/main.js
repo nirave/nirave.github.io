@@ -435,9 +435,9 @@ var resizePizzas = function(size) {
   // to the size on the slider on the webpage
   function changePizzaSizes(size) {
     var pizzaContainers = document.getElementsByClassName("randomPizzaContainer");
-	
+
     // This function maps the size with the width of a column
-	// Return the width in terms of percentage
+    // Return the width in terms of percentage
     function sizeSwitcher (size) {
       switch(size) {
         case "1":
@@ -451,12 +451,12 @@ var resizePizzas = function(size) {
       }
     }
 
-	// The widths of the pizza is based on the size slider
+    // The widths of the pizza is based on the size slider
     var newWidth = sizeSwitcher(size);
-	
+
     //Change all the pizzas to the new width
-	var pizzaLength = pizzaContainers.length;
-	for (var i = 0; i < pizzaLength; i++) {
+    var pizzaLength = pizzaContainers.length;
+    for (var i = 0; i < pizzaLength; i++) {
         pizzaContainers[i].style.width = newWidth + "%";
     }
 
@@ -514,10 +514,10 @@ function updatePositions() {
   //Loop through the pizzas and move the background pizzas
   for (var i = 0; i < items.length; i++) {
     // Pizza move left and right as if they were moving around the diameter of a circle
-	// To get the horizontal movement of the backtground pizza, use the sin function
+    // To get the horizontal movement of the backtground pizza, use the sin function
     var phase = Math.sin((scrollTop / 1250) + (i % 5));
-	
-	//Set the pizza based on the phase calculated above
+
+    //Set the pizza based on the phase calculated above
     items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
@@ -545,7 +545,7 @@ document.addEventListener('DOMContentLoaded', function() {
   //Figure out how many rows are needed by dividing the screen height by the row column
   //and multiply by the number columns
   var numPizzas = Math.ceil((window.screen.height / s) * cols);
- 
+
   //Loop through and create the elements that contain the element images
   for (var i = 0; i < numPizzas; i++) {
     var elem = document.createElement('img');
@@ -555,9 +555,9 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-	document.getElementById("movingPizzas1").appendChild(elem);
+    document.getElementById("movingPizzas1").appendChild(elem);
   }
-  
+
   //Set the positions of the background pizzas
   updatePositions();
 });
